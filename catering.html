@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering y Eventos Especiales | Papookie</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav" id="nav-principal">
+    <div class="contenedor">
+      <a href="index.html" class="nav-marca">
+        <img src="img/logo.png" alt="Logo Papookie">
+        <span>Papookie</span>
+      </a>
+      <nav class="nav-enlaces" id="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="comprar.html">Comprar online</a>
+        <a href="catering.html" class="activo">Catering</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-carrito" onclick="abrirCarrito()">
+          🛒 Carrito <span id="contador-carrito" class="carrito-contador oculto">0</span>
+        </button>
+        <button class="hamburguesa" id="btn-hamburguesa">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO CATERING -->
+  <section class="hero-catering">
+    <div class="contenedor">
+      <div class="hero-catering-grid">
+        <div class="hero-catering-texto">
+          <h1>Catering y Eventos especiales</h1>
+          <p>Haz que tus eventos sean inolvidables con Papookie. Transforma cada ocasión en una dulce celebración. Pide
+            tus cajas y torres de galletas para tus eventos en La Paz.</p>
+          <a href="#cotizador" class="btn btn-oscuro">COTIZAR MI EVENTO</a>
+        </div>
+        <div class="hero-catering-imagen">
+          <!-- Puedes cambiar esta imagen por la que prefieras -->
+          <img src="img/GALLETA CATERING.png" alt="Catering Papookie" class="img-flotante-catering">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COTIZADOR INTERACTIVO -->
+  <section class="seccion" id="cotizador" style="background: var(--azul-suave);">
+    <div class="contenedor">
+      <div class="seccion-cabecera" style="margin-bottom: 40px;">
+        <span class="etiqueta-semana">Cotizador Interactivo</span>
+        <h2 style="margin-top: 10px;">Solicita tu Pre-Cotización</h2>
+        <p>Completa los 3 pasos para generar tu cotización personalizada inmediatamente.</p>
+      </div>
+
+      <div class="panel panel-catering">
+        <!-- PASO 1: TIPO DE EVENTO -->
+        <div class="paso-contenedor">
+          <label class="titulo-paso-interactivo">
+            <span class="paso-numero">1</span> ¿Qué vas a celebrar?
+          </label>
+          <div class="grid-botones-evento">
+            <button type="button" onclick="seleccionarEvento('Cumpleaños', this)" class="btn-evento activo">
+              <span class="emoji-evento">🎂</span>
+              <span>Cumpleaños</span>
+            </button>
+            <button type="button" onclick="seleccionarEvento('Evento Corporativo', this)" class="btn-evento">
+              <span class="emoji-evento">💼</span>
+              <span>Evento Corporativo</span>
+            </button>
+            <button type="button" onclick="seleccionarEvento('Boda / Aniversario', this)" class="btn-evento">
+              <span class="emoji-evento">💍</span>
+              <span>Boda / Aniversario</span>
+            </button>
+            <button type="button" onclick="seleccionarEvento('Graduación / Fiesta UCB', this)" class="btn-evento">
+              <span class="emoji-evento">🎓</span>
+              <span>Graduación / Fiesta UCB</span>
+            </button>
+          </div>
+        </div>
+
+        <hr class="divisor-formulario">
+        <!-- PASO 2: CANTIDAD DE INVITADOS (Barra fluida y alineada) -->
+        <div class="paso-contenedor">
+          <label class="titulo-paso-interactivo flex-between">
+            <div><span class="paso-numero">2</span> ¿Cuántos Pookies o invitados asistirán?</div>
+            <span id="display-invitados" class="badge-invitados">50 personas</span>
+          </label>
+          <div class="rango-contenedor">
+            <input type="range" id="rango-invitados" min="20" max="200" step="5" value="50"
+              oninput="actualizarInvitados(this.value)">
+            <div class="etiquetas-posicionadas">
+              <span style="left: 0%;">20 pers.</span>
+              <span style="left: 16.6%;">50 pers.</span>
+              <span style="left: 44.4%;">100 pers.</span>
+              <span style="left: 100%; transform: translateX(-100%);">200+ pers.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 3: PRESENTACIÓN -->
+        <div class="paso-contenedor">
+          <label class="titulo-paso-interactivo">
+            <span class="paso-numero">3</span> Elige la presentación de tus galletas
+          </label>
+          <div class="grid-presentacion">
+            <!-- Opción A -->
+            <div onclick="seleccionarPresentacion('Mini Pookies Box', this)" class="tarjeta-presentacion activa">
+              <div class="img-presentacion">
+                <img src="img/MINI GALLETAS.png" alt="Mini Pookies Box"
+                  onerror="this.src='https://placehold.co/400x250/0052FF/FFFFFF?text=MINI+POOKIES+BOX'">
+              </div>
+              <div class="info-presentacion">
+                <h4>Mini Pookies Box <span class="icono-check check-activo">✔</span></h4>
+                <p>Galletas en formato mini, ideales para picar y compartir en mesas de dulces.</p>
+              </div>
+            </div>
+            <!-- Opción B -->
+            <div onclick="seleccionarPresentacion('Pookie Towers', this)" class="tarjeta-presentacion">
+              <div class="img-presentacion">
+                <img src="img/TORRE DE GALLETAS.png" alt="Pookie Towers"
+                  onerror="this.src='https://placehold.co/400x250/FFC700/0052FF?text=POOKIE+TOWERS'">
+              </div>
+              <div class="info-presentacion">
+                <h4>Pookie Towers <span class="icono-check">✔</span></h4>
+                <p>Torres piramidales decorativas de galletas que se convierten en el centro de atención.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RESUMEN Y DATOS FINALES -->
+        <div class="resumen-cotizacion">
+          <h3 class="titulo-resumen">Resumen de tu Pre-Cotización</h3>
+          <div class="grid-resumen-tags">
+            <div class="tag-resumen"><span>Evento:</span> <strong id="resumen-evento">Cumpleaños</strong></div>
+            <div class="tag-resumen"><span>Invitados:</span> <strong id="resumen-invitados">50 personas</strong></div>
+            <div class="tag-resumen"><span>Presentación:</span> <strong id="resumen-presentacion"
+                style="color: var(--amarillo);">Mini Pookies Box</strong></div>
+          </div>
+
+          <div class="form-grid-2" style="margin-top: 20px;">
+            <input type="text" id="cat-nombre" placeholder="Tu nombre completo" class="input-cotizador" required>
+            <input type="tel" id="cat-whatsapp" placeholder="Tu WhatsApp" class="input-cotizador" required>
+          </div>
+          <input type="text" id="cat-direccion" placeholder="Zona o dirección del evento" class="input-cotizador"
+            style="width: 100%; margin-top: 15px;" required>
+
+          <button onclick="enviarCotizacionWhatsApp()" class="btn btn-acento btn-block"
+            style="margin-top: 20px; font-size: 1.1rem; padding: 18px;">
+            Enviar pre-cotización por WhatsApp 💬
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section class="seccion">
+    <div class="contenedor contenedor-faq">
+      <div class="seccion-cabecera">
+        <h2>PREGUNTAS FRECUENTES (FAQ)</h2>
+      </div>
+
+      <div class="faq-lista">
+        <div class="faq-item">
+          <button class="faq-pregunta">1. ¿Con cuántos días de anticipación debo hacer mi pedido de catering? <span
+              class="icono-faq">+</span></button>
+          <div class="faq-respuesta">
+            <p>Para garantizar la máxima frescura en tu evento, recomendamos realizar tu pedido con mínimo 5 a 7 días de
+              anticipación. Si es un evento muy grande (+100 personas), ¡mientras antes nos avises, mejor coordinaremos
+              cada detalle!</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-pregunta">2. ¿Cuentan con opciones sin gluten o vegetarianas? <span
+              class="icono-faq">+</span></button>
+          <div class="faq-respuesta">
+            <p>Por el momento todas nuestras galletas contienen harina de trigo tradicional y derivados lácteos, por lo
+              que no contamos con una línea certificada sin gluten o vegana. Sin embargo, estamos trabajando
+              continuamente en nuestras recetas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-pregunta">3. ¿Hacen envíos a domicilio o cobertura a eventos en toda La Paz? <span
+              class="icono-faq">+</span></button>
+          <div class="faq-respuesta">
+            <p>¡Sí! Contamos con envíos a domicilio diarios, y para eventos especiales coordinamos entregas
+              personalizadas directamente en el lugar y horario de tu evento en toda la ciudad de La Paz y El Alto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER Y WHATSAPP FLOTANTE -->
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-marca"><img src="img/logo.png" alt="Logo Papookie"><span>Papookie</span></div>
+          <p>Galería de galletas y sabores para cada antojo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="comprar.html">Comprar online</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/papookie.bo/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/p/Papookie-61582322795851/" target="_blank">Facebook</a></li>
+            <li><a href="#" id="whatsapp-footer" target="_blank">WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sucursales</h4>
+          <ul>
+            <li>Centro — C. Colombia #257</li>
+            <li>Zona Sur — Av. Montenegro</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-inferior">
+        <span>© 2026 Papookie. Todos los derechos reservados.</span><span>Hecho con 🍪 en La Paz, Bolivia</span>
+      </div>
+    </div>
+  </footer>
+  <a href="#" id="whatsapp-flotante" class="whatsapp-flotante" target="_blank">💬</a>
+
+  <!-- CARRITO LATERAL -->
+  <div class="carrito-fondo" id="fondo-carrito" onclick="cerrarCarrito()"></div>
+  <aside class="carrito-panel" id="panel-carrito">
+    <div class="carrito-cabecera">
+      <h3>Tu carrito 🛒</h3><button onclick="cerrarCarrito()">×</button>
+    </div>
+    <div class="carrito-lista" id="lista-carrito"></div>
+    <div class="carrito-pie" id="pie-carrito">
+      <div class="fila-total"><span>Total</span><span id="total-carrito">Bs. 0</span></div>
+      <button class="btn btn-azul btn-block" onclick="irAComprarDesdeCarrito()">REALIZAR PEDIDO</button>
+    </div>
+  </aside>
+  <script src="script.js"></script>
+</body>
+
+</html>
+```<FollowUp>
+  <ElicitationsGroup>
+    <Elicitation intent="Verify integration of Catering functionality"
+      text="¿Lograste guardar las imágenes `MINI GALLETAS.png` y `TORRE DE GALLETAS.png` en tu carpeta `img/` para que el cotizador se vea correctamente?" />
+    <Elicitation intent="Proceed to final Community page review"
+      text="Si el cotizador ya está funcionando como esperabas, ¿quieres que te pase también el archivo completo de `comunidad.html` para no tener que armarlo por partes?" />
+  </ElicitationsGroup>
+</FollowUp>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de Galleta | Papookie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav" id="nav-principal">
+    <div class="contenedor">
+      <a href="index.html" class="nav-marca">
+        <img src="img/logo.png" alt="Logo Papookie" />
+        <span>Papookie</span>
+      </a>
+      <nav class="nav-enlaces" id="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="activo">Productos</a>
+        <a href="comprar.html">Comprar online</a>
+        <a href="catering.html">Catering</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-carrito" onclick="abrirCarrito()" aria-label="Abrir carrito">
+          🛒 Carrito
+          <span id="contador-carrito" class="carrito-contador oculto">0</span>
+        </button>
+        <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BOTÓN VOLVER -->
+  <div class="nav-volver contenedor">
+    <a href="productos.html" class="btn-enlace">← Volver al catálogo</a>
+  </div>
+
+  <!-- =========================================================
+     DETALLE DEL PRODUCTO (Estilo Imagen 3)
+     El fondo se inyectará dinámicamente con JS
+     ========================================================= -->
+  <section class="producto-detalle-hero" id="producto-fondo">
+    <div class="contenedor producto-detalle-grid">
+      <!-- Izquierda: Imagen Flotante -->
+      <div class="producto-detalle-imagen">
+        <img src="" alt="Galleta Papookie" id="producto-img" class="img-flotante" />
+      </div>
+
+      <!-- Derecha: Información y Compra -->
+      <div class="producto-detalle-info">
+        <span class="etiqueta-estado" id="producto-etiqueta">Servida Caliente</span>
+        <h1 id="producto-nombre">Cargando...</h1>
+        <p class="producto-desc" id="producto-descripcion"></p>
+
+        <p class="producto-precio-grande" id="producto-precio"></p>
+
+        <div class="producto-detalle-acciones">
+          <!-- El onclick enviará la galleta actual al carrito -->
+          <button class="btn btn-oscuro btn-block" onclick="agregarGalletaActualAlCarrito()">
+            Ordena Ahora
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+     INGREDIENTES
+     ========================================================= -->
+  <section class="seccion ingredientes-seccion">
+    <div class="contenedor contenedor-centrado">
+      <h2>Ingredientes destacados</h2>
+      <p class="ingredientes-subtitulo">
+        Una sinfonía de harina, azúcar, mantequilla, huevos y el mejor cacao,
+        se unen para crear nuestros deliciosamente grandes postres.
+      </p>
+
+      <div class="ingredientes-iconos">
+        <div class="ing-item">
+          <div class="ing-circulo">🌾</div>
+          <span>Harina</span>
+        </div>
+        <div class="ing-item">
+          <div class="ing-circulo">🍚</div>
+          <span>Azúcar</span>
+        </div>
+        <div class="ing-item">
+          <div class="ing-circulo">🧈</div>
+          <span>Mantequilla</span>
+        </div>
+        <div class="ing-item">
+          <div class="ing-circulo">🥚</div>
+          <span>Huevos</span>
+        </div>
+        <div class="ing-item">
+          <div class="ing-circulo">🍫</div>
+          <span>Cacao</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- =========================================================
+     FOOTER COMPLETO Y BOTÓN DE WHATSAPP (Aparece en todas las páginas)
+     ========================================================= -->
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-marca">
+            <img src="img/logo.png" alt="Logo Papookie" />
+            <span>Papookie</span>
+          </div>
+          <p>Galería de galletas y sabores para cada antojo.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="comprar.html">Comprar online</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Redes</h4>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/papookie.bo/" target="_blank" rel="noopener">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/p/Papookie-61582322795851/" target="_blank" rel="noopener">Facebook</a>
+            </li>
+            <li>
+              <a href="#" id="whatsapp-footer" target="_blank" rel="noopener">WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sucursales</h4>
+          <ul>
+            <li>Centro — C. Colombia #257</li>
+            <li>Zona Sur — Av. Montenegro</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <span>© 2026 Papookie. Todos los derechos reservados.</span>
+        <span>Hecho con 🍪 en La Paz, Bolivia</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a href="#" id="whatsapp-flotante" class="whatsapp-flotante" aria-label="Escríbenos por WhatsApp" target="_blank"
+    rel="noopener">💬</a>
+
+  <!-- PANEL DEL CARRITO -->
+  <div class="carrito-fondo" id="fondo-carrito" onclick="cerrarCarrito()"></div>
+  <aside class="carrito-panel" id="panel-carrito">
+    <div class="carrito-cabecera">
+      <h3>Tu carrito 🛒</h3>
+      <button onclick="cerrarCarrito()">×</button>
+    </div>
+    <div class="carrito-lista" id="lista-carrito"></div>
+    <div class="carrito-pie" id="pie-carrito">
+      <div class="fila-total">
+        <span>Total</span>
+        <span id="total-carrito">Bs. 0</span>
+      </div>
+      <button class="btn btn-azul btn-block" onclick="irAComprarDesdeCarrito()">
+        REALIZAR PEDIDO
+      </button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

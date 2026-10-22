@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Papookie | Galletas recién horneadas</title>
+  <meta name="description"
+    content="Tienda online de Papookie: galletas recién horneadas para pedir por delivery o recoger en sucursal. Descubre nuestros sabores clásicos y los sabores nuevos de cada semana." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- =========================================================
+     NAV
+     ========================================================= -->
+  <header class="nav" id="nav-principal">
+    <div class="contenedor">
+      <a href="index.html" class="nav-marca">
+        <img src="img/logo.png" alt="Logo Papookie" />
+        <span>Papookie</span>
+      </a>
+
+      <nav class="nav-enlaces" id="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="comprar.html">Comprar online</a>
+        <a href="catering.html">Catering</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="nav-acciones">
+        <button class="btn-carrito" onclick="abrirCarrito()" aria-label="Abrir carrito">
+          🛒 Carrito
+          <span id="contador-carrito" class="carrito-contador oculto">0</span>
+        </button>
+        <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+     HERO
+     ========================================================= -->
+  <section class="hero" id="inicio">
+    <div class="hero-slider">
+      <div class="hero-slide activa">
+        <div class="contenedor">
+          <div class="hero-texto">
+            <span class="hero-etiqueta">Recién horneadas todos los días</span>
+            <h1 class="hero-titulo-adaptable">Papookie</h1>
+            <p class="hero-frase">
+              Pequeñas galletas, <b>grandes antojos.</b> Elige tu favorita 🍪
+            </p>
+            <div class="hero-botones">
+              <a href="productos.html" class="btn btn-primario">VER GALLETAS</a>
+              <a href="comprar.html" class="btn btn-acento">COMPRAR AHORA</a>
+            </div>
+          </div>
+          <div class="hero-imagen">
+            <img src="img/IMAGENES INICIO PAPOOKIE.png" alt="Galletas Papookie recién horneadas" />
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <div class="contenedor">
+          <div class="hero-texto">
+            <span class="hero-etiqueta">Cada semana</span>
+            <h1 class="hero-titulo-adaptable">Sabores nuevos</h1>
+            <p class="hero-frase">
+              Cada lunes llega un sabor distinto. <b>No te lo pierdas.</b>
+            </p>
+            <div class="hero-botones">
+              <a href="#sabores-nuevos" class="btn btn-primario">DESCUBRIR SABORES</a>
+            </div>
+          </div>
+          <div class="hero-imagen">
+            <img src="img/IMAGENES INICIO PAPOOKIE (1).png" alt="Sabor nuevo de la semana" />
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide">
+        <div class="contenedor">
+          <div class="hero-texto">
+            <span class="hero-etiqueta">Delivery o recojo en sucursal</span>
+            <h1 class="hero-titulo-adaptable">Pide en minutos</h1>
+            <p class="hero-frase">
+              Arma tu pedido online y <b>recíbelo por WhatsApp.</b>
+            </p>
+            <div class="hero-botones">
+              <a href="comprar.html" class="btn btn-primario">HACER PEDIDO</a>
+            </div>
+          </div>
+          <div class="hero-imagen">
+            <img src="img/IMAGENES INICIO PAPOOKIE (2).png" alt="Galleta Papookie" />
+          </div>
+        </div>
+      </div>
+
+      <button class="hero-flecha hero-flecha--izq" id="hero-flecha-izq" aria-label="Anterior">
+        ‹
+      </button>
+      <button class="hero-flecha hero-flecha--der" id="hero-flecha-der" aria-label="Siguiente">
+        ›
+      </button>
+
+      <div class="hero-controles">
+        <button class="activo" aria-label="Ir a la diapositiva 1"></button>
+        <button aria-label="Ir a la diapositiva 2"></button>
+        <button aria-label="Ir a la diapositiva 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+     SABORES NUEVOS (ROTACIÓN SEMANAL)
+     ========================================================= -->
+  <section class="sabores-nuevos" id="sabores-nuevos">
+    <div class="contenedor">
+      <div class="sabores-cabecera">
+        <div>
+          <h2>SABORES NUEVOS<br /><span>¡CADA SEMANA!</span></h2>
+          <p>
+            Todos los lunes renovamos la vitrina. Prueba los sabores de esta
+            semana antes de que se agoten.
+          </p>
+        </div>
+        <span class="semana-rango" id="rango-semana">Actualiza cada lunes</span>
+      </div>
+
+      <!-- Contenedor listo para inyectar las nuevas tarjetas horizontales con JS -->
+      <div class="grid-sabores-semana" id="grid-sabores-semana">
+        <!-- Se genera dinámicamente desde script.js -->
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+     SECCIÓN NOSOTROS (Misión y Visión)
+     ========================================================= -->
+  <section class="seccion nosotros" id="nosotros">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <h2>Sobre <span>Papookies</span></h2>
+        <p>Conoce un poco más sobre el propósito que nos mueve cada día en La Paz.</p>
+      </div>
+
+      <div class="nosotros-grid">
+        <!-- Tarjeta Misión -->
+        <div class="tarjeta-nosotros">
+          <div class="icono-nosotros">🎯</div>
+          <h3>Nuestra Misión</h3>
+          <p>En Papookies, elaboramos galletas con ingredientes de calidad, ofreciendo sabores deliciosos y una
+            experiencia dulce que acompañe los momentos especiales de nuestros clientes. Buscamos satisfacer sus antojos
+            a través de productos frescos, una atención cercana y un servicio práctico que facilite sus pedidos en La
+            Paz.</p>
+        </div>
+
+        <!-- Tarjeta Visión -->
+        <div class="tarjeta-nosotros">
+          <div class="icono-nosotros">👁️</div>
+          <h3>Nuestra Visión</h3>
+          <p>Ser una marca reconocida en La Paz por la calidad, el sabor y la originalidad de nuestras galletas,
+            convirtiéndonos en una de las opciones favoritas de nuestros clientes y creciendo de manera sostenible para
+            llegar a más personas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- =========================================================
+     FOOTER
+     ========================================================= -->
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-marca">
+            <img src="img/logo.png" alt="Logo Papookie" />
+            <span>Papookie</span>
+          </div>
+          <p>Galería de galletas y sabores para cada antojo.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="comprar.html">Comprar online</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Redes</h4>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/papookie.bo/" target="_blank" rel="noopener">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/p/Papookie-61582322795851/" target="_blank" rel="noopener">Facebook</a>
+            </li>
+            <li>
+              <a href="#" id="whatsapp-footer" target="_blank" rel="noopener">WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sucursales</h4>
+          <ul>
+            <li>Centro — C. Colombia #257</li>
+            <li>Zona Sur — Av. Montenegro</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <span>© 2026 Papookie. Todos los derechos reservados.</span>
+        <span>Hecho con 🍪 en La Paz, Bolivia</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+     BOTÓN FLOTANTE DE WHATSAPP (Solo en Inicio)
+     ========================================================= -->
+  <a href="#" id="whatsapp-flotante" class="whatsapp-flotante" aria-label="Escríbenos por WhatsApp" target="_blank"
+    rel="noopener">💬</a>
+
+  <!-- =========================================================
+     PANEL DEL CARRITO (Se mantiene en todas las páginas)
+     ========================================================= -->
+  <div class="carrito-fondo" id="fondo-carrito" onclick="cerrarCarrito()"></div>
+  <aside class="carrito-panel" id="panel-carrito">
+    <div class="carrito-cabecera">
+      <h3>Tu carrito 🛒</h3>
+      <button onclick="cerrarCarrito()" aria-label="Cerrar carrito">×</button>
+    </div>
+
+    <div class="carrito-lista" id="lista-carrito">
+      <!-- Se genera dinámicamente desde script.js -->
+    </div>
+
+    <div class="carrito-pie" id="pie-carrito">
+      <div class="fila-total">
+        <span>Total</span>
+        <span id="total-carrito">Bs. 0</span>
+      </div>
+      <button class="btn btn-azul btn-block" onclick="irAComprarDesdeCarrito()">
+        REALIZAR PEDIDO
+      </button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

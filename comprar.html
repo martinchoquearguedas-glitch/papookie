@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comprar Online | Papookie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav" id="nav-principal">
+    <div class="contenedor">
+      <a href="index.html" class="nav-marca">
+        <img src="img/logo.png" alt="Logo Papookie" />
+        <span>Papookie</span>
+      </a>
+      <nav class="nav-enlaces" id="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="comprar.html" class="activo">Comprar online</a>
+        <a href="catering.html">Catering</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-carrito" onclick="abrirCarrito()" aria-label="Abrir carrito">
+          🛒 Carrito
+          <span id="contador-carrito" class="carrito-contador oculto">0</span>
+        </button>
+        <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- COMPRAR ONLINE -->
+  <section class="seccion comprar-online" id="comprar">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <h2>Finaliza tu pedido</h2>
+        <p>
+          Revisa tu carrito, completa tus datos y envía el detalle directo a
+          nuestro WhatsApp.
+        </p>
+      </div>
+
+      <div class="comprar-grid">
+        <div class="panel">
+          <h3>Resumen del pedido</h3>
+          <div id="resumen-pedido"></div>
+          <div class="totales">
+            <div class="fila-total">
+              <span>Total</span>
+              <span id="total-pedido">Bs. 0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Completa tus datos</h3>
+          <form id="form-pedido">
+            <div class="grupo-campo">
+              <label for="campo-nombre">Nombre completo</label>
+              <input type="text" id="campo-nombre" name="nombre" placeholder="Tu nombre" required />
+            </div>
+            <div class="grupo-campo">
+              <label for="campo-whatsapp">Número de WhatsApp</label>
+              <input type="tel" id="campo-whatsapp" name="whatsapp" placeholder="Ej. 700 00 000" required />
+            </div>
+            <div class="grupo-campo">
+              <label for="campo-direccion">Zona / dirección</label>
+              <input type="text" id="campo-direccion" name="direccion" placeholder="Zona, calle y referencia"
+                required />
+            </div>
+            <div class="grupo-campo">
+              <label>Método de entrega</label>
+              <div class="opciones-entrega">
+                <label class="opcion-entrega activa" data-valor="Delivery">
+                  <input type="radio" name="entrega" value="Delivery" checked />
+                  Delivery
+                </label>
+                <label class="opcion-entrega" data-valor="Recoger en sucursal">
+                  <input type="radio" name="entrega" value="Recoger en sucursal" />
+                  Recoger en sucursal
+                </label>
+              </div>
+              <input type="hidden" id="campo-entrega" value="Delivery" />
+            </div>
+            <div class="grupo-campo">
+              <label for="campo-observaciones">Observaciones (opcional)</label>
+              <textarea id="campo-observaciones" name="observaciones" rows="3"
+                placeholder="Ej. sin nueces, tocar el timbre, etc."></textarea>
+            </div>
+            <button type="submit" class="btn btn-azul btn-block">
+              ENVIAR PEDIDO POR WHATSAPP
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- =========================================================
+     FOOTER COMPLETO Y BOTÓN DE WHATSAPP (Aparece en todas las páginas)
+     ========================================================= -->
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-marca">
+            <img src="img/logo.png" alt="Logo Papookie" />
+            <span>Papookie</span>
+          </div>
+          <p>Galería de galletas y sabores para cada antojo.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="comprar.html">Comprar online</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Redes</h4>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/papookie.bo/" target="_blank" rel="noopener">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/p/Papookie-61582322795851/" target="_blank" rel="noopener">Facebook</a>
+            </li>
+            <li>
+              <a href="#" id="whatsapp-footer" target="_blank" rel="noopener">WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sucursales</h4>
+          <ul>
+            <li>Centro — C. Colombia #257</li>
+            <li>Zona Sur — Av. Montenegro</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <span>© 2026 Papookie. Todos los derechos reservados.</span>
+        <span>Hecho con 🍪 en La Paz, Bolivia</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a href="#" id="whatsapp-flotante" class="whatsapp-flotante" aria-label="Escríbenos por WhatsApp" target="_blank"
+    rel="noopener">💬</a>
+
+  <!-- PANEL DEL CARRITO (Mismo de arriba) -->
+  <div class="carrito-fondo" id="fondo-carrito" onclick="cerrarCarrito()"></div>
+  <aside class="carrito-panel" id="panel-carrito">
+    <div class="carrito-cabecera">
+      <h3>Tu carrito 🛒</h3>
+      <button onclick="cerrarCarrito()">×</button>
+    </div>
+    <div class="carrito-lista" id="lista-carrito"></div>
+    <div class="carrito-pie" id="pie-carrito">
+      <div class="fila-total">
+        <span>Total</span><span id="total-carrito">Bs. 0</span>
+      </div>
+      <button class="btn btn-azul btn-block" onclick="cerrarCarrito()">
+        ACTUALIZAR
+      </button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

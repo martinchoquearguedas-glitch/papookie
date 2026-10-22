@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Papookie</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav" id="nav-principal">
+    <div class="contenedor">
+      <a href="index.html" class="nav-marca">
+        <img src="img/logo.png" alt="Logo Papookie">
+        <span>Papookie</span>
+      </a>
+      <nav class="nav-enlaces" id="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="activo">Productos</a>
+        <a href="comprar.html">Comprar online</a>
+        <a href="catering.html">Catering</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-carrito" onclick="abrirCarrito()">
+          🛒 Carrito <span id="contador-carrito" class="carrito-contador oculto">0</span>
+        </button>
+        <button class="hamburguesa" id="btn-hamburguesa">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN CATÁLOGO DE SABORES -->
+  <section class="seccion">
+    <div class="contenedor">
+      <div class="seccion-cabecera">
+        <span class="etiqueta-semana">Sabores Papookie</span>
+        <h2>Nuestra Galería de Cookies</h2>
+        <p>Conoce la variedad de sabores artesanales preparados con ingredientes seleccionados para darte el toque único
+          de Papookie.</p>
+      </div>
+
+      <!-- CUADRÍCULA SIMÉTRICA DE 10 SABORES -->
+      <div class="grid-catalogo-10" id="grid-catalogo-10">
+        <!-- Se inyectan dinámicamente con JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER COMPLETO Y BOTÓN DE WHATSAPP -->
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-marca"><img src="img/logo.png" alt="Logo Papookie"><span>Papookie</span></div>
+          <p>Galería de galletas y sabores para cada antojo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="comprar.html">Comprar online</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/papookie.bo/" target="_blank">Instagram</a></li>
+            <li><a href="https://www.facebook.com/p/Papookie-61582322795851/" target="_blank">Facebook</a></li>
+            <li><a href="#" id="whatsapp-footer" target="_blank">WhatsApp</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sucursales</h4>
+          <ul>
+            <li>Centro — C. Colombia #257</li>
+            <li>Zona Sur — Av. Montenegro</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-inferior">
+        <span>© 2026 Papookie. Todos los derechos reservados.</span>
+        <span>Hecho con 🍪 en La Paz, Bolivia</span>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="whatsapp-flotante" class="whatsapp-flotante" aria-label="Escríbenos por WhatsApp"
+    target="_blank">💬</a>
+
+  <!-- CARRITO LATERAL (Se mantiene funcional para otras páginas) -->
+  <div class="carrito-fondo" id="fondo-carrito" onclick="cerrarCarrito()"></div>
+  <aside class="carrito-panel" id="panel-carrito">
+    <div class="carrito-cabecera">
+      <h3>Tu carrito 🛒</h3>
+      <button onclick="cerrarCarrito()">×</button>
+    </div>
+    <div class="carrito-lista" id="lista-carrito"></div>
+    <div class="carrito-pie" id="pie-carrito">
+      <div class="fila-total">
+        <span>Total</span>
+        <span id="total-carrito">Bs. 0</span>
+      </div>
+      <button class="btn btn-azul btn-block" onclick="irAComprarDesdeCarrito()">REALIZAR PEDIDO</button>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

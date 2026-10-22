@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto y Tiendas | Papookie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav" id="nav-principal">
+    <div class="contenedor">
+      <a href="index.html" class="nav-marca">
+        <img src="img/logo.png" alt="Logo Papookie" />
+        <span>Papookie</span>
+      </a>
+      <nav class="nav-enlaces" id="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="comprar.html">Comprar online</a>
+        <a href="catering.html">Catering</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="contacto.html" class="activo">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-carrito" onclick="abrirCarrito()">
+          🛒 Carrito
+          <span id="contador-carrito" class="carrito-contador oculto">0</span>
+        </button>
+        <button class="hamburguesa" id="btn-hamburguesa">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SELECCIONA UNA TIENDA (NUEVO DISEÑO MAPA) -->
+  <section class="seccion" id="encuentranos">
+    <div class="contenedor">
+      <div class="mapa-tiendas-grid">
+        <!-- Columna Izquierda: Mapa -->
+        <div class="mapa-contenedor">
+          <!-- Incrustamos el mapa apuntando exactamente a La Paz, Bolivia con pin en la Sucursal Centro -->
+          <iframe
+            src="https://maps.google.com/maps?q=Calle+Colombia+257,+La+Paz,+Bolivia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Columna Derecha: Lista de Tiendas -->
+        <div class="tiendas-lista">
+          <h2>Selecciona una tienda</h2>
+
+          <a href="https://maps.google.com/?q=C.+Colombia+257,+La+Paz,+Bolivia" target="_blank"
+            class="tarjeta-tienda-link">
+            <div class="tarjeta-tienda">
+              <div class="tienda-icono">📍</div>
+              <div class="tienda-info">
+                <h3>Sucursal Centro</h3>
+                <p class="estado-tienda"><i>Abierto ahora</i></p>
+                <p>C. Colombia #257, Local 3, La Paz</p>
+              </div>
+              <div class="tienda-flecha">›</div>
+            </div>
+          </a>
+
+          <a href="https://maps.google.com/?q=Av.+Montenegro,+La+Paz,+Bolivia" target="_blank"
+            class="tarjeta-tienda-link">
+            <div class="tarjeta-tienda">
+              <div class="tienda-icono">📍</div>
+              <div class="tienda-info">
+                <h3>Sucursal Zona Sur</h3>
+                <p class="estado-tienda"><i>Abierto ahora</i></p>
+                <p>Av. Montenegro, frente al Carrusel, La Paz</p>
+              </div>
+              <div class="tienda-flecha">›</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HORARIOS -->
+  <section class="seccion horarios" id="horarios">
+    <div class="contenedor">
+      <h2>Horarios de <span class="amarillo">atención</span></h2>
+      <div class="horarios-grid">
+        <div class="horario-item">
+          <h4>Lunes a sábados</h4>
+          <p class="hora">11:00 AM – 8:00 PM</p>
+        </div>
+        <div class="horario-item">
+          <h4>Domingos</h4>
+          <p class="hora">11:00 AM – 8:00 PM</p>
+          <p class="nota">Sucursal Zona Sur</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDES SOCIALES -->
+  <section class="seccion" style="padding-top: 0">
+    <div class="contenedor" style="text-align: center">
+      <h3>Nuestras redes</h3>
+      <div class="redes-lista" style="flex-direction: row; justify-content: center; flex-wrap: wrap">
+        <a class="red-social" href="https://www.instagram.com/papookie.bo/" target="_blank">
+          <span class="icono">📷</span> Instagram
+        </a>
+        <a class="red-social" href="https://www.facebook.com/p/Papookie-61582322795851/" target="_blank">
+          <span class="icono">📘</span> Facebook
+        </a>
+        <a class="red-social" id="whatsapp-contacto" href="#" target="_blank">
+          <span class="icono">💬</span> WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER Y CARRITO -->
+  <!-- =========================================================
+     FOOTER COMPLETO Y BOTÓN DE WHATSAPP (Aparece en todas las páginas)
+     ========================================================= -->
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-marca">
+            <img src="img/logo.png" alt="Logo Papookie" />
+            <span>Papookie</span>
+          </div>
+          <p>Galería de galletas y sabores para cada antojo.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="comprar.html">Comprar online</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Redes</h4>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/papookie.bo/" target="_blank" rel="noopener">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/p/Papookie-61582322795851/" target="_blank" rel="noopener">Facebook</a>
+            </li>
+            <li>
+              <a href="#" id="whatsapp-footer" target="_blank" rel="noopener">WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sucursales</h4>
+          <ul>
+            <li>Centro — C. Colombia #257</li>
+            <li>Zona Sur — Av. Montenegro</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <span>© 2026 Papookie. Todos los derechos reservados.</span>
+        <span>Hecho con 🍪 en La Paz, Bolivia</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+  <a href="#" id="whatsapp-flotante" class="whatsapp-flotante" aria-label="Escríbenos por WhatsApp" target="_blank"
+    rel="noopener">💬</a>
+  <!-- (Mismo de las anteriores páginas) -->
+  <div class="carrito-fondo" id="fondo-carrito" onclick="cerrarCarrito()"></div>
+  <aside class="carrito-panel" id="panel-carrito">
+    <div class="carrito-cabecera">
+      <h3>Tu carrito 🛒</h3>
+      <button onclick="cerrarCarrito()">×</button>
+    </div>
+    <div class="carrito-lista" id="lista-carrito"></div>
+    <div class="carrito-pie" id="pie-carrito">
+      <div class="fila-total">
+        <span>Total</span><span id="total-carrito">Bs. 0</span>
+      </div>
+      <button class="btn btn-azul btn-block" onclick="irAComprarDesdeCarrito()">
+        REALIZAR PEDIDO
+      </button>
+    </div>
+  </aside>
+  <script src="script.js"></script>
+</body>
+
+</html>

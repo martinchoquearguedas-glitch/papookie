@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comunidad Pookies | Papookie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav" id="nav-principal">
+    <div class="contenedor">
+      <a href="index.html" class="nav-marca">
+        <img src="img/logo.png" alt="Logo Papookie" />
+        <span>Papookie</span>
+      </a>
+      <nav class="nav-enlaces" id="nav-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="comprar.html">Comprar online</a>
+        <a href="catering.html">Catering</a>
+        <a href="comunidad.html" class="activo">Comunidad</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="nav-acciones">
+        <button class="btn-carrito" onclick="abrirCarrito()">
+          🛒 Carrito
+          <span id="contador-carrito" class="carrito-contador oculto">0</span>
+        </button>
+        <button class="hamburguesa" id="btn-hamburguesa">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO COMUNIDAD -->
+  <section class="hero-comunidad">
+    <div class="contenedor text-center">
+      <h1>¡Bienvenido al universo Pookie!</h1>
+      <p>
+        Tu espacio exclusivo para sorpresas, promociones especiales, noticias
+        de lanzamientos y dinámicas creadas especialmente para verdaderos
+        amantes de las galletas.
+      </p>
+
+      <div class="badge-comunidad">
+        👑 ¡Ya somos <span id="contador-pookies">667</span> Pookies en la
+        comunidad!
+      </div>
+
+      <div class="imagen-comunidad-wrapper">
+        <!-- Asegúrate de tener una foto llamativa llamada comunidad.png en tu carpeta img -->
+        <img src="img/comunidad.png " alt="Comunidad Papookie TEAM" />
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS POOKIES REWARDS -->
+  <section class="seccion" style="padding-top: 40px; padding-bottom: 40px;">
+    <div class="contenedor text-center">
+      <h2 style="font-size: 2.2rem; margin-bottom: 10px;">Beneficios Pookies Rewards</h2>
+      <p style="color: var(--texto-suave); margin-bottom: 40px;">Ventajas exclusivas diseñadas para nuestra comunidad.
+      </p>
+
+      <div class="grid-beneficios">
+        <div class="tarjeta-beneficio">
+          <div class="icono-beneficio" style="background: #FFF9C4; color: #FBC02D;">⭐</div>
+          <h3>Acumula Puntos</h3>
+          <p>Por cada caja de galletas disfrutas de puntos canjeables por regalos especiales.</p>
+        </div>
+        <div class="tarjeta-beneficio">
+          <div class="icono-beneficio" style="background: #E3F2FD; color: #1E88E5;">🎁</div>
+          <h3>Descuentos Exclusivos</h3>
+          <p>Promociones sorpresa y cupones solo para miembros del club.</p>
+        </div>
+        <div class="tarjeta-beneficio">
+          <div class="icono-beneficio" style="background: #F3E5F5; color: #8E24AA;">🔓</div>
+          <h3>Acceso Anticipado</h3>
+          <p>Prueba los nuevos sabores antes que nadie en La Paz.</p>
+        </div>
+        <div class="tarjeta-beneficio">
+          <div class="icono-beneficio" style="background: #FFEBEE; color: #E53935;">💛</div>
+          <h3>Sorpresas Especiales</h3>
+          <p>Regalo de galletas gratis durante todo el mes de tu cumpleaños.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN DE REGISTRO Y CLUB -->
+  <section class="registro-comunidad">
+    <div class="contenedor text-center">
+      <h2>Súmate al Club y no te pierdas nada.</h2>
+      <p>
+        Únete a nuestra comunidad oficial para recibir beneficios exclusivos y
+        regístrate para que celebremos juntos el mes de tu cumpleaños.
+      </p>
+
+      <div class="contenedor-tarjetas-club">
+        <!-- PASO 1: CUMPLEAÑOS -->
+        <div class="tarjeta-paso">
+          <div class="paso-cabecera paso-rosado">Paso 1: Tu Cumpleaños</div>
+          <div class="paso-contenido">
+            <form id="form-cumpleanos">
+              <div class="grupo-campo text-left">
+                <label>Nombre completo</label>
+                <input type="text" id="cumple-nombre" required />
+              </div>
+              <div class="grupo-campo text-left">
+                <label>Número de WhatsApp</label>
+                <input type="tel" id="cumple-whatsapp" required />
+              </div>
+              <div class="grupo-campo text-left">
+                <label>Mes de tu cumpleaños 🎂</label>
+                <select id="cumple-mes" required>
+                  <option value="" disabled selected>
+                    Selecciona tu mes
+                  </option>
+                  <option value="Enero">Enero</option>
+                  <option value="Febrero">Febrero</option>
+                  <option value="Marzo">Marzo</option>
+                  <option value="Abril">Abril</option>
+                  <option value="Mayo">Mayo</option>
+                  <option value="Junio">Junio</option>
+                  <option value="Julio">Julio</option>
+                  <option value="Agosto">Agosto</option>
+                  <option value="Septiembre">Septiembre</option>
+                  <option value="Octubre">Octubre</option>
+                  <option value="Noviembre">Noviembre</option>
+                  <option value="Diciembre">Diciembre</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-coral">
+                [ Registrar mi cumpleaños 🎁 ]
+              </button>
+              <div class="mensaje-exito oculto" id="mensaje-exito-cumple">
+                ¡Genial! Ya estás registrado/a. Puedes obtener una sorpresa
+                especial en el mes de tu cumple.
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- PASO 2: COMUNIDAD WHATSAPP -->
+        <div class="tarjeta-paso">
+          <div class="paso-cabecera paso-verde">Paso 2: Conéctate</div>
+          <div class="paso-contenido" style="padding: 40px 30px">
+            <!-- Pega el enlace real de tu grupo/comunidad de WhatsApp en el href -->
+            <a href="https://chat.whatsapp.com/TU_ENLACE_AQUI" target="_blank" class="btn btn-whatsapp-verde">
+              [ Unirme a la Comunidad de WhatsApp 📱 ]
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER Y WHATSAPP FLOTANTE -->
+  <footer>
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-marca">
+            <img src="img/logo.png" alt="Logo Papookie" /><span>Papookie</span>
+          </div>
+          <p>Galería de galletas y sabores para cada antojo.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="comprar.html">Comprar online</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="comunidad.html">Comunidad</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Redes</h4>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/papookie.bo/" target="_blank">Instagram</a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/p/Papookie-61582322795851/" target="_blank">Facebook</a>
+            </li>
+            <li>
+              <a href="#" id="whatsapp-footer" target="_blank">WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sucursales</h4>
+          <ul>
+            <li>Centro — C. Colombia #257</li>
+            <li>Zona Sur — Av. Montenegro</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-inferior">
+        <span>© 2026 Papookie. Todos los derechos reservados.</span><span>Hecho con 🍪 en La Paz, Bolivia</span>
+      </div>
+    </div>
+  </footer>
+  <a href="#" id="whatsapp-flotante" class="whatsapp-flotante" target="_blank">💬</a>
+
+  <!-- PANEL DEL CARRITO -->
+  <div class="carrito-fondo" id="fondo-carrito" onclick="cerrarCarrito()"></div>
+  <aside class="carrito-panel" id="panel-carrito">
+    <div class="carrito-cabecera">
+      <h3>Tu carrito 🛒</h3>
+      <button onclick="cerrarCarrito()">×</button>
+    </div>
+    <div class="carrito-lista" id="lista-carrito"></div>
+    <div class="carrito-pie" id="pie-carrito">
+      <div class="fila-total">
+        <span>Total</span><span id="total-carrito">Bs. 0</span>
+      </div>
+      <button class="btn btn-azul btn-block" onclick="irAComprarDesdeCarrito()">
+        REALIZAR PEDIDO
+      </button>
+    </div>
+  </aside>
+  <script src="script.js"></script>
+</body>
+
+</html>
